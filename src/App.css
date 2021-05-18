@@ -20,3 +20,39 @@
 .App-link {
   color: #09d3ac;
 }
+
+.user-card{
+  width: 20rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.user-avatar{
+  border-radius: 5.75rem;
+  width: 80px;
+  text-align: center;
+}
+html{
+  scrollbar-width: thin;
+  scrollbar-color: #282c34 #fff;
+  scroll-behavior: smooth;
+}
+
+.loader{
+  width: 150px;
+  animation: rotate360 infinite 1.5s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+
 import './App.css';
+import './bootstrap.min.css';
+
+import SiteNav from './components/SiteNav';
+import Index from './Pages/Index/Index';
+import NewCredential from './Pages/New/NewCredential';
+import EditCredential from './Pages/Edit/EditCredential';
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+return (
+<BrowserRouter>
+  <SiteNav />
+  <Switch>
+    <Route exact path="/" component={Index} />
+    <Route exact path="/new-credential" component={NewCredential} />
+    <Route exact path="/edit/:id" component={EditCredential} />
+  </Switch>
+</BrowserRouter>
+);
 }
 
 export default App;
